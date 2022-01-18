@@ -41,7 +41,7 @@ public class meinePflanzen : MonoBehaviour
 
                         //Buttons text field
                         TMPro.TextMeshProUGUI buttonText = meinePflanzeButton.GetComponentInChildren<TMPro.TextMeshProUGUI>();
-                        buttonText.text=reader["name"]+"\n"+reader["nickname"];
+                        buttonText.text=reader["nickname"]+"\n"+reader["name"];
 
                         //look for plant image texture by plantname        
                         foreach (Texture x in imageTextures)
