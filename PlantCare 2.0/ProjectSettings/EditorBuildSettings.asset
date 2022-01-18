@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MeinePflanzen.unity
+    guid: 038015cb58ae30f42bc7cda292bcc08d
+  - enabled: 1
+    path: Assets/Scenes/TitelBild.unity
+    guid: 0612a896ef855e44eaed4c1ea94e57f8
+  - enabled: 1
+    path: Assets/Scenes/PflanzeFinden.unity
+    guid: 060891339edaf404488bd52cf52b9d6e
+  - enabled: 1
+    path: Assets/Scenes/Kalender.unity
+    guid: d26b78a509d72d74e9680b7868cc9dcc
+  - enabled: 1
+    path: Assets/Scenes/Erfolge.unity
+    guid: 736aad68e1bf1e143941a76a829d6571
+  - enabled: 1
+    path: Assets/Scenes/AllgemeineTipps.unity
+    guid: 936f2b0242f47384098cf99638def956
+  - enabled: 1
+    path: Assets/Scenes/Pflanzenprofil.unity
+    guid: 3774a19baf4b4f64a8067059b5f40da1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/InfosGiessen.unity
+    guid: e8dcd8f60238744439b19057dcd5402e
+  - enabled: 1
+    path: Assets/Scenes/InfosDuengen.unity
+    guid: d77b22b49a91c0c41a82606c33c1f518
+  - enabled: 1
+    path: Assets/Scenes/InfosUmtopfen.unity
+    guid: 90f1da768d694b348a4aa3ce6d790a17
+  - enabled: 1
+    path: Assets/Scenes/PflanzeHinzufuegen.unity
+    guid: fa0557315ba2f0c4aa95557129f8ceee
+  - enabled: 1
+    path: Assets/Scenes/InfoPflanzenprofil.unity
+    guid: 865ebce8759381a42adb648db00a611b
+  - enabled: 1
+    path: Assets/Scenes/Einstellungen.unity
+    guid: 2849eaaeffeb3f5498f9cd9b6a1977ac
+  - enabled: 1
+    path: Assets/Scenes/Hilfedialog.unity
+    guid: 8c48b09ed76ba55459b1043bfdbe2d50
+  m_configObjects: {}
