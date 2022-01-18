@@ -7,7 +7,6 @@ using UnityEngine.UI;
 using System.Globalization;
 using System;
 
-
 public class ProfilInfo : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI title;
@@ -15,8 +14,8 @@ public class ProfilInfo : MonoBehaviour
     private int plantID;
     private string dbName = "URI=file:Plants.db";
 
-    void Start(){
-        plantID=PlayerPrefs.GetInt("plantID");
+    void Start() {
+        plantID = PlayerPrefs.GetInt("plantID");
         DateTime dateOfPlantsCreation;
         DateTime currentDate=DateTime.Now;
 
@@ -33,35 +32,31 @@ public class ProfilInfo : MonoBehaviour
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
 
-                        string termine="";
+                        string termine = "";
                         dateOfPlantsCreation = new DateTime(reader.GetInt32(reader.GetOrdinal("yearOfCreation")),
                         reader.GetInt32(reader.GetOrdinal("monthOfCreation")), reader.GetInt32(reader.GetOrdinal("dayOfCreation")));
                                 
-                        try{
+                        try {
                             // Calculate number of days passed between the two dates.
                             TimeSpan interval = currentDate- dateOfPlantsCreation;
 
                             //get value in days
-                            int fertilizeFrequencyInDays= 7*reader.GetInt32(reader.GetOrdinal("fertilizeFrequencyInWeeks"));
+                            int fertilizeFrequencyInDays = 7*reader.GetInt32(reader.GetOrdinal("fertilizeFrequencyInWeeks"));
 
-                            //check if fertilizing is requiered at clicked date
+                            //check if fertilizing is requiered at current date
                             if(interval.Days % fertilizeFrequencyInDays == 0) {
-                                termine+="düngen";
+                                termine += "düngen";
                             }
-                            //check if pouring is requiered at clicked date
+                            //check if pouring is requiered at current date
                             if(interval.Days % reader.GetInt32(reader.GetOrdinal("pourFrequencyInDays")) == 0) {
-                                termine+=" gießen";
+                                termine += " gießen";
                             }
-                        }catch(Exception e){
+                        } catch(Exception e) {
                             Debug.Log(e);
                         }
 
-                        title.text=""+reader["nickname"];
-                        Debug.Log(""+reader["name"]+"\n");
-                        Debug.Log(reader["latName"]+"\n");
-                        Debug.Log(reader["difficultyLevel"]+"\n");
-                        Debug.Log("Heute: "+termine);
-                        info.text= ""+reader["name"]+"\n"+reader["latName"]+"\n"+reader["difficultyLevel"]+"\n"+"Heute: "+termine;
+                        title.text = "" + reader["nickname"];
+                        info.text = "" + r eader["name"] + "\n" + reader["latName"] + "\n" + reader["difficultyLevel"] + "\n" + "Heute: " + termine;
                     }
                     reader.Close();
                 }
