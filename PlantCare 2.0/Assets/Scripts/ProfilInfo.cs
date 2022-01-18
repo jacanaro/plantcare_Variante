@@ -56,7 +56,7 @@ public class ProfilInfo : MonoBehaviour
                         }
 
                         title.text = "" + reader["nickname"];
-                        info.text = "" + r eader["name"] + "\n" + reader["latName"] + "\n" + reader["difficultyLevel"] + "\n" + "Heute: " + termine;
+                        info.text = "" + reader["name"] + "\n" + reader["latName"] + "\n" + reader["difficultyLevel"] + "\n" + "Heute: " + termine;
                     }
                     reader.Close();
                 }
