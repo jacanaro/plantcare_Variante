@@ -27,7 +27,6 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
 
 
     public InputField iField;
-    public Text infoText;
     public Text latNameText;
     public RawImage plantImage;
     public Texture[] imageTextures = new Texture[3];
@@ -58,8 +57,7 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
                 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        latNameText.text = "" + reader["latName"];
-                        infoText.text = "Kurzbeschreibung: " + reader["generalInfo"];
+                        latNameText.text = "Lat. Name:\n" + reader["latName"];
                     }
                     reader.Close();
                 }
