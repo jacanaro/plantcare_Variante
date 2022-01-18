@@ -57,7 +57,7 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
                 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        latNameText.text = "Lat. Name:\n" + reader["latName"];
+                        latNameText.text = ""+reader["latName"];
                     }
                     reader.Close();
                 }

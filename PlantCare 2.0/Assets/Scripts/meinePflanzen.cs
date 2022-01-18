@@ -26,7 +26,7 @@ public class meinePflanzen : MonoBehaviour
                 command.CommandText = "SELECT plantID, name, nickname FROM userPlants, publicPlants where userPlants.latName=publicPlants.latName;";
                 
                 //initial button position y
-                float myY=205;
+                float myY=195;
 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
@@ -35,8 +35,9 @@ public class meinePflanzen : MonoBehaviour
                         meinePflanzeButton.transform.parent = mainPanel.transform;
                         RectTransform rectTransform = meinePflanzeButton.GetComponent<RectTransform>();
                         Vector2 position = rectTransform.anchoredPosition;
-                        rectTransform.anchoredPosition = new Vector2(-85, myY);
-                        myY=myY-(rectTransform.rect.height/3);
+                        
+                        rectTransform.anchoredPosition = new Vector2(0, myY);
+                        myY=myY-(rectTransform.rect.height+15);
                         int plantID=reader.GetInt32(reader.GetOrdinal("plantID"));
 
                         //Buttons text field
