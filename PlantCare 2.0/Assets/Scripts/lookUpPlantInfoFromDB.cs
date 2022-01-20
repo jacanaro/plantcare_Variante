@@ -40,7 +40,7 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
          {
              if (x.name.Equals(userInput))
              {
-                plantImage.texture=x;
+                plantImage.texture = x;
              }
          }
 
@@ -48,16 +48,13 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
         //create the db connection
         using (var connection = new SqliteConnection(dbName)) {
             connection.Open();
-
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()) {
-                
                 //get generalInfo
-                command.CommandText = "SELECT latName,generalInfo FROM publicPlants WHERE name='" + userInput+ "';";
-                
+                command.CommandText = "SELECT latName,generalInfo FROM publicPlants WHERE name='" + userInput + "';";
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        latNameText.text = ""+reader["latName"];
+                        latNameText.text = "" + reader["latName"];
                     }
                     reader.Close();
                 }
@@ -70,7 +67,6 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
         //create the db connection
         using (var connection = new SqliteConnection(dbName)) {
             connection.Open();
-
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()) {
                 //create a table called publicPlants, if it doesnt exist already
@@ -86,7 +82,6 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
         //create the db connection
         using (var connection = new SqliteConnection(dbName)) {
             connection.Open();
-
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()) {
                 //create a table called publicPlants, if it doesnt exist already
@@ -101,11 +96,10 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
     public void AddPlant(string name, string latName, string generalInfo, string amountOfSunNeeded, string difficultyLevel, int pourFrequencyInDays, int fertilizeFrequencyInWeeks, string plantsOptimalLocation) {
         using (var connection = new SqliteConnection(dbName)) {
             connection.Open();
-
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()) {
                     //sql command for insertion
-                command.CommandText = "INSERT INTO publicPlants (name, latName, generalInfo, amountOfSunNeeded, difficultyLevel, pourFrequencyInDays, fertilizeFrequencyInWeeks, plantsOptimalLocation) VALUES ('" + name + "', '" + latName+ "', '" +generalInfo+ "', '" + amountOfSunNeeded+ "', '" + difficultyLevel+ "', '" + pourFrequencyInDays+ "', '" + fertilizeFrequencyInWeeks+ "', '" + plantsOptimalLocation+ "');";
+                command.CommandText = "INSERT INTO publicPlants (name, latName, generalInfo, amountOfSunNeeded, difficultyLevel, pourFrequencyInDays, fertilizeFrequencyInWeeks, plantsOptimalLocation) VALUES ('" + name + "', '" + latName+ "', '" +generalInfo+ "', '" + amountOfSunNeeded+ "', '" + difficultyLevel+ "', '" + pourFrequencyInDays+ "', '" + fertilizeFrequencyInWeeks+ "', '" + plantsOptimalLocation + "');";
                 command.ExecuteNonQuery(); //runs sql command
             }
             connection.Close();
@@ -115,12 +109,10 @@ public class lookUpPlantInfoFromDB : MonoBehaviour
     public void consoleLogPlants() {
         using (var connection = new  SqliteConnection(dbName)) {
             connection.Open();
-
             //set up command obj
             using (var command = connection.CreateCommand()) {
                 //get everything from publicPlants table
                 command.CommandText = "SELECT * FROM publicPlants;";
-
                 //iterate through publicPlants
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read())

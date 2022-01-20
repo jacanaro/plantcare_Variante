@@ -5,8 +5,7 @@ using System.Data;
 using Mono.Data.Sqlite;
 using UnityEngine.UI;
 using System;
-
-/*NICHT FERTIG: Logikproblem bei der verschachtelten Anfrage, welche Angaben wichtiger sind als andere, z.B. viel Sonne+Profi, und dann alle schwierigkeiten für mittel und viel sonne.... */
+using TMPro;
 
 public class findPlants : MonoBehaviour {
 
@@ -14,12 +13,19 @@ public class findPlants : MonoBehaviour {
     public Transform locationDropdown;
     public Transform sunDropdown;
     public Transform difficultyDropdown;
+    
+    public RawImage plantImage;
+    public Texture[] imageTextures = new Texture[3];
+    public TextMeshProUGUI  name;
+    public TextMeshProUGUI  sonnenbedarf;
+    public TextMeshProUGUI  schwierigkeit;
  
     public GameObject loading;
     public GameObject match;
     public GameObject noMatch;
     public GameObject results;
     private int checkMatch;
+
 
     public void findPlant() {
         
@@ -32,7 +38,7 @@ public class findPlants : MonoBehaviour {
 
         Debug.Log("Suche gestartet");
 
-        //checken was ausgewählt ist
+        //checken was ausgewaehlt ist
         int indexLocation = locationDropdown.GetComponent<Dropdown>().value; //menuIndex
         int indexSun = sunDropdown.GetComponent<Dropdown>().value;
         int indexDifficulty = difficultyDropdown.GetComponent<Dropdown>().value;
@@ -41,7 +47,7 @@ public class findPlants : MonoBehaviour {
         List<Dropdown.OptionData> optionsSun = sunDropdown.GetComponent<Dropdown>().options; 
         List<Dropdown.OptionData> optionsDifficulty = difficultyDropdown.GetComponent<Dropdown>().options;
  
-        //value ist die jeweils ausgewählte option
+        //value ist die jeweils ausgewaehlte option
         string locationValue = optionsLocation[indexLocation].text;
         string sunValue = optionsSun[indexSun].text;
         string difficultyValue = optionsDifficulty[indexDifficulty].text;
@@ -94,6 +100,19 @@ public class findPlants : MonoBehaviour {
                         Debug.Log("\nBraucht " + reader["amountOfSunNeeded"] + " Sonne");
                         Debug.Log("\nSchwierigkeit: " + reader["difficultyLevel"]);
                         checkMatch++;
+                        //plantImage.texture =
+                        name.text = "" + reader["name"]; 
+                        sonnenbedarf.text = "Braucht " + reader["amountOfSunNeeded"] + " Sonne";
+                        schwierigkeit.text = "Schwierigkeit: " + reader["difficultyLevel"];
+                        
+                        foreach (Texture x in imageTextures)
+                        {
+                            if (x.name.Equals(reader["name"]))
+                            {
+                                plantImage.texture = x;
+                            }
+                        }
+
                     }
                     reader.Close();
 
@@ -102,18 +121,16 @@ public class findPlants : MonoBehaviour {
                         loading.SetActive(false);
                         match.SetActive(true);
                         noMatch.SetActive(false);
+
                     } else {
                         results.SetActive(true);
                         loading.SetActive(false);
                         match.SetActive(false);
-                        noMatch.SetActive(true); 
+                        noMatch.SetActive(true);
                     }
-                    
                 }
             }
             connection.Close();
         }
     }
-
-
 }
