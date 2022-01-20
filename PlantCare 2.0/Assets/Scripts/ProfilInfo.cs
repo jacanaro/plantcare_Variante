@@ -25,13 +25,11 @@ public class ProfilInfo : MonoBehaviour
 
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()) {
-                
                 //get generalInfo
                 command.CommandText = "SELECT publicPlants.latName, difficultyLevel, yearOfCreation, monthOfCreation, dayOfCreation, fertilizeFrequencyInWeeks, pourFrequencyInDays, name, nickname FROM userPlants INNER JOIN publicPlants on publicPlants.latName = userPlants.latName WHERE plantID='" + plantID + "';";
                 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-
                         string termine = "";
                         dateOfPlantsCreation = new DateTime(reader.GetInt32(reader.GetOrdinal("yearOfCreation")),
                         reader.GetInt32(reader.GetOrdinal("monthOfCreation")), reader.GetInt32(reader.GetOrdinal("dayOfCreation")));

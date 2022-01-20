@@ -14,7 +14,6 @@ public class Script_BtnAnim: MonoBehaviour
             if(animator != null)
             {
                 bool isOpen = animator.GetBool("open");
-
                 animator.SetBool("open", !isOpen);
             }
         }

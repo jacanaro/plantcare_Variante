@@ -31,7 +31,7 @@ public class Script_Erfolge : MonoBehaviour
     public int erf4Trigger = 2;
     public static int erf4Code = 0;
 
-    //Fünfter Erfolg Spezifisch (Pflanze umgetopft) !!!!!MUSS NOCH GEMACHT WERDEN!!!!!
+    //Fuenfter Erfolg Spezifisch (Pflanze umgetopft) !!!!!MUSS NOCH GEMACHT WERDEN!!!!!
     public static int erf5Count = 0;
     public int erf5Trigger = 2;
     public static int erf5Code = 0;

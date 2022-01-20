@@ -9,7 +9,6 @@ public class RotateLeft : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private float rotateSpeed = 100f;
     bool rotate = false;
 
-
     private void FixedUpdate()
     {
         if (rotate == false)
