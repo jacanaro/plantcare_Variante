@@ -39,8 +39,6 @@ public class Script_Erfolge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(erf1Count);
-
         erf1Code = PlayerPrefs.GetInt("Erf1");
         if(erf1Count >= erf1Trigger && erf1Code != 12345)
         {
