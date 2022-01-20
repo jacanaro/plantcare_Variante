@@ -54,7 +54,6 @@ public class ProfilInfo : MonoBehaviour
                         } catch(Exception e) {
                             Debug.Log(e);
                         }
-
                         title.text = "" + reader["nickname"];
                         info.text = "" + reader["name"] + "\n" + reader["latName"] + "\n" + reader["difficultyLevel"] + "\n" + "Heute: " + termine;
                     }

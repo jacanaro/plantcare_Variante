@@ -6,12 +6,11 @@ using Mono.Data.Sqlite;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class loadPlantInfo : MonoBehaviour
 {
     private string dbName = "URI=file:Plants.db";
-    private string pflanzenName="unbekannt";
-    private string generalInfo="unbekannt";
+    private string pflanzenName = "unbekannt";
+    private string generalInfo = "unbekannt";
 
     public void loadInfo(){
         int plantID=PlayerPrefs.GetInt("plantID");
@@ -28,8 +27,8 @@ public class loadPlantInfo : MonoBehaviour
                 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        pflanzenName= ""+reader["name"];
-                        generalInfo= ""+reader["generalInfo"];
+                        pflanzenName = ""+reader["name"];
+                        generalInfo = ""+reader["generalInfo"];
                         PlayerPrefs.SetString("name", pflanzenName);
                         PlayerPrefs.SetString("generalInfo", generalInfo);
                     }
@@ -38,8 +37,6 @@ public class loadPlantInfo : MonoBehaviour
             }
             connection.Close();
         }
-
         SceneManager.LoadScene("InfoPflanzenprofil");
-
     }
 }
