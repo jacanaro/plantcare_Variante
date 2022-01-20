@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -414,8 +414,8 @@ MonoBehaviour:
   meinePflanzenButtonPrefab: {fileID: 8384960042906431691, guid: ace5554f26139eb459605d459059b99f, type: 3}
   mainPanel: {fileID: 164493907}
   imageTextures:
-  - {fileID: 2800000, guid: cf61a9302b4e3084a8b04140b2a636e4, type: 3}
-  - {fileID: 2800000, guid: e5634e061d5ba214197bce00e3c56e6d, type: 3}
+  - {fileID: 2800000, guid: 81a0282bde9c53d40b42c6cb7773479b, type: 3}
+  - {fileID: 2800000, guid: d40dd64c236b9ff43a5628a16b8f1262, type: 3}
   - {fileID: 2800000, guid: 2591b3da30980d141b312fc57b0c5c2f, type: 3}
 --- !u!1 &255287238
 GameObject:
