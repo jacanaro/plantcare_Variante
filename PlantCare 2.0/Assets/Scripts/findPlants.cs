@@ -5,8 +5,7 @@ using System.Data;
 using Mono.Data.Sqlite;
 using UnityEngine.UI;
 using System;
-
-/*NICHT FERTIG: Logikproblem bei der verschachtelten Anfrage, welche Angaben wichtiger sind als andere, z.B. viel Sonne+Profi, und dann alle schwierigkeiten für mittel und viel sonne.... */
+using TMPro;
 
 public class findPlants : MonoBehaviour {
 
@@ -14,6 +13,12 @@ public class findPlants : MonoBehaviour {
     public Transform locationDropdown;
     public Transform sunDropdown;
     public Transform difficultyDropdown;
+    
+    public RawImage plantImage;
+    public Texture[] imageTextures = new Texture[3];
+    public TextMeshProUGUI  name;
+    public TextMeshProUGUI  sonnenbedarf;
+    public TextMeshProUGUI  schwierigkeit;
  
     public GameObject loading;
     public GameObject match;
@@ -32,7 +37,7 @@ public class findPlants : MonoBehaviour {
 
         Debug.Log("Suche gestartet");
 
-        //checken was ausgewählt ist
+        //checken was ausgewaehlt ist
         int indexLocation = locationDropdown.GetComponent<Dropdown>().value; //menuIndex
         int indexSun = sunDropdown.GetComponent<Dropdown>().value;
         int indexDifficulty = difficultyDropdown.GetComponent<Dropdown>().value;
@@ -41,7 +46,7 @@ public class findPlants : MonoBehaviour {
         List<Dropdown.OptionData> optionsSun = sunDropdown.GetComponent<Dropdown>().options; 
         List<Dropdown.OptionData> optionsDifficulty = difficultyDropdown.GetComponent<Dropdown>().options;
  
-        //value ist die jeweils ausgewählte option
+        //value ist die jeweils ausgewaehlte option
         string locationValue = optionsLocation[indexLocation].text;
         string sunValue = optionsSun[indexSun].text;
         string difficultyValue = optionsDifficulty[indexDifficulty].text;
@@ -61,32 +66,21 @@ public class findPlants : MonoBehaviour {
                     } 
                 } else if (difficultyValue == "eine Niete") {
                      if (sunValue == "viel") {
-                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "viel" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND difficultyLevel = '" + "leicht" + "';";
+                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "viel" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND difficultyLevel = '" + "einfach" + "';";
                     } else if (sunValue == "wenig") {
-                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "wenig" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND difficultyLevel = '" + "leicht" + "';";
+                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "wenig" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND difficultyLevel = '" + "einfach" + "';";
                     } else {
-                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND difficultyLevel = '" + "leicht" + "';";
+                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND difficultyLevel = '" + "einfach" + "';";
                     } 
                 } else {
                     if (sunValue == "viel") {
-                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "viel" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND (difficultyLevel = '" + "leicht"  + "' OR difficultyLevel = '" + "mittel" + "');";
+                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "viel" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND (difficultyLevel = '" + "einfach"  + "' OR difficultyLevel = '" + "mittel" + "');";
                     } else if (sunValue == "wenig") {
-                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "wenig" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND (difficultyLevel = '" + "leicht"  + "' OR difficultyLevel = '" + "mittel" + "');";
+                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "' AND (amountOfSunNeeded = '" + "wenig" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND (difficultyLevel = '" + "einfach"  + "' OR difficultyLevel = '" + "mittel" + "');";
                     } else {
-                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "'AND (difficultyLevel = '" + "leicht"  + "' OR difficultyLevel = '" + "mittel" + "');";
+                        command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "'AND (difficultyLevel = '" + "einfach"  + "' OR difficultyLevel = '" + "mittel" + "');";
                     } 
                 }
-
-                /*
-                if (sunValue == "viel") {     
-                    command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "'AND (amountOfSunNeeded = '" + "viel" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND difficultyLevel = '" + difficultyValue + "';";
-                } else if (sunValue == "wenig") {
-                    command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "'AND (amountOfSunNeeded = '" + "wenig" + "' OR amountOfSunNeeded = '" + "mittel" + "') AND difficultyLevel = '" + difficultyValue + "';";
-                } 
-                else {
-                    command.CommandText = "SELECT name, amountOfSunNeeded, difficultyLevel FROM publicPlants WHERE plantsOptimalLocation = '" + locationValue + "'AND amountOfSunNeeded = '" + sunValue + "' AND difficultyLevel = '" + difficultyValue + "';";
-                }
-                */
 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
@@ -94,6 +88,18 @@ public class findPlants : MonoBehaviour {
                         Debug.Log("\nBraucht " + reader["amountOfSunNeeded"] + " Sonne");
                         Debug.Log("\nSchwierigkeit: " + reader["difficultyLevel"]);
                         checkMatch++;
+                        //plantImage.texture =
+                        name.text = "" + reader["name"]; 
+                        sonnenbedarf.text = "Braucht " + reader["amountOfSunNeeded"] + " Sonne";
+                        schwierigkeit.text = "Schwierigkeit: " + reader["difficultyLevel"];
+                        
+                        foreach (Texture x in imageTextures)
+                        {
+                            if (x.name.Equals(reader["name"]))
+                            {
+                                plantImage.texture = x;
+                            }
+                        }
                     }
                     reader.Close();
 
@@ -106,14 +112,11 @@ public class findPlants : MonoBehaviour {
                         results.SetActive(true);
                         loading.SetActive(false);
                         match.SetActive(false);
-                        noMatch.SetActive(true); 
+                        noMatch.SetActive(true);
                     }
-                    
                 }
             }
             connection.Close();
         }
     }
-
-
 }

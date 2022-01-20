@@ -14,7 +14,6 @@ using UnityEngine.SceneManagement;
 public class UpdatePlant : MonoBehaviour
 {
     private string dbName = "URI=file:Plants.db";
-
     public InputField nicknameInputfield;
     public Transform plantStageDropdown;
     public TMPro.TextMeshProUGUI responseText;
@@ -34,12 +33,11 @@ public class UpdatePlant : MonoBehaviour
 
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()){
-                command.CommandText = "UPDATE userPlants SET nickname='" + nicknameInputfield.text + "', plantStage='"+ dropdownValue +"' WHERE plantID='"+ PlayerPrefs.GetInt("plantID") +"';";
+                command.CommandText = "UPDATE userPlants SET nickname='" + nicknameInputfield.text + "', plantStage='" + dropdownValue + "' WHERE plantID='" + PlayerPrefs.GetInt("plantID") +"';";
                 command.ExecuteNonQuery(); //runs sql command
             }
             connection.Close();
         }
-
         responseText.text="Erfolgreich!";
     }
 }

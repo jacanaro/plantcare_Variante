@@ -9,25 +9,25 @@ public class manageSmileyPopup : MonoBehaviour
     public GameObject smileyHappy;
     public GameObject smileySad;
 
-    void Update(){
-        if(PlayerPrefs.GetString("gesundheit").Equals("gut")){
+    void Update() {
+        if (PlayerPrefs.GetString("gesundheit").Equals("gut")) {
             smileyHappy.SetActive(true);
             smileySad.SetActive(false);
         }
-        else if(PlayerPrefs.GetString("gesundheit").Equals("schlecht"))
+        else if (PlayerPrefs.GetString("gesundheit").Equals("schlecht"))
         {
             smileyHappy.SetActive(false);
             smileySad.SetActive(true);
         }
     }
 
-    public void openHilfedialog(){
+    public void openHilfedialog() {
         SceneManager.LoadScene("Hilfedialog");
         Popup.SetActive(false);
         PlayerPrefs.SetString("gesundheit", "schlecht");
     }
 
-    public void closeSmileyPopup(){
+    public void closeSmileyPopup() {
         PlayerPrefs.SetString("gesundheit", "gut");
         Popup.SetActive(false);
     }

@@ -26,7 +26,7 @@ public class meinePflanzen : MonoBehaviour
                 command.CommandText = "SELECT plantID, name, nickname FROM userPlants, publicPlants where userPlants.latName=publicPlants.latName;";
                 
                 //initial button position y
-                float myY=195;
+                float myY = 195;
 
                 using (IDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
@@ -52,7 +52,6 @@ public class meinePflanzen : MonoBehaviour
                                 meinePflanzeButton.GetComponentInChildren<RawImage>().texture=x;
                             }
                         }
-
                         //set onlick
                         meinePflanzeButton.GetComponent<Button>().onClick.AddListener(()=> MeinePflanzeButtonOnClick(plantID));
                     }

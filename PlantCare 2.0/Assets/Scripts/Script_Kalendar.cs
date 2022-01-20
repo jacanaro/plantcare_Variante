@@ -95,10 +95,8 @@ public class Script_Kalendar : MonoBehaviour
         int startDay = GetMonthStartDay(year, month);
         int endDay = GetTotalNumberOfDays(year, month);
 
-
         ///Create the days
         ///This only happens for our first Update Calendar when we have no Day objects therefore we must create them
-
         if (days.Count == 0)
         {
             for (int w = 0; w < 6; w++)
