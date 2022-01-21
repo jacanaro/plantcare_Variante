@@ -416,7 +416,7 @@ MonoBehaviour:
   imageTextures:
   - {fileID: 2800000, guid: 81a0282bde9c53d40b42c6cb7773479b, type: 3}
   - {fileID: 2800000, guid: d40dd64c236b9ff43a5628a16b8f1262, type: 3}
-  - {fileID: 2800000, guid: 2591b3da30980d141b312fc57b0c5c2f, type: 3}
+  - {fileID: 2800000, guid: 85567ad04cf9e814fa7f8f066eed930a, type: 3}
 --- !u!1 &255287238
 GameObject:
   m_ObjectHideFlags: 0
