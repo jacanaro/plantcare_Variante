@@ -9,6 +9,13 @@ public class manageSmileyPopup : MonoBehaviour
     public GameObject smileyHappy;
     public GameObject smileySad;
 
+    void Start(){
+        if(PlayerPrefs.GetString("gesundheit")==null || PlayerPrefs.GetString("gesundheit").Equals("")) {
+            smileyHappy.SetActive(true);
+            PlayerPrefs.SetString("gesundheit", "gut");
+        }
+    }
+
     void Update() {
         if (PlayerPrefs.GetString("gesundheit").Equals("gut")) {
             smileyHappy.SetActive(true);
@@ -30,6 +37,7 @@ public class manageSmileyPopup : MonoBehaviour
     public void closeSmileyPopup() {
         PlayerPrefs.SetString("gesundheit", "gut");
         Popup.SetActive(false);
+        SceneManager.LoadScene("Pflanzenprofil");
     }
 
     public void openSmileyPopup(){

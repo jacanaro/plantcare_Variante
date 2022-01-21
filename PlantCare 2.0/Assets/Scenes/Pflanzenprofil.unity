@@ -3985,9 +3985,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelWraper: {fileID: 595468348}
   modelTextures:
+  - {fileID: 919132149155446097, guid: 37a224244e80b33488e687779d246d69, type: 3}
+  - {fileID: 919132149155446097, guid: 2ac705b06fd545d4b9af618abd91b86d, type: 3}
   - {fileID: 919132149155446097, guid: de06aef43a208d749ad7d90ab36341eb, type: 3}
+  - {fileID: 919132149155446097, guid: 66bd95c0c7a5a1f41b5a2ac88d7f972d, type: 3}
+  - {fileID: 919132149155446097, guid: b7062984132b11e438bf1bbbcedea5ae, type: 3}
+  - {fileID: 919132149155446097, guid: 95c64825fdaabd84da63e6ec5c825e3d, type: 3}
+  - {fileID: 919132149155446097, guid: 26bd645535cc96747a501333876a9e8a, type: 3}
   - {fileID: 919132149155446097, guid: ffa32e686bc5d4a48b7df70d7b30f8de, type: 3}
+  - {fileID: 919132149155446097, guid: 71e3fadf3be686e4e83dde36cae6408f, type: 3}
+  - {fileID: 919132149155446097, guid: 3c0453d8450d5f74fb0a27c12b57b2a3, type: 3}
   - {fileID: 919132149155446097, guid: ddba32150ec7a3e438dfb40e191bcdc1, type: 3}
+  - {fileID: 919132149155446097, guid: b8e01f657385980479cf9f697a408a06, type: 3}
 --- !u!1 &1384618120
 GameObject:
   m_ObjectHideFlags: 0
