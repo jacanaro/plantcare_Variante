@@ -28,7 +28,7 @@ public class Script_Erfolge : MonoBehaviour
 
     //Vierter Erfolg Spezifisch (Pflanze gerettet) !!!!!MUSS NOCH GEMACHT WERDEN!!!!!
     public static int erf4Count = 0;
-    public int erf4Trigger = 2;
+    public int erf4Trigger = 1;
     public static int erf4Code = 0;
 
     //Fuenfter Erfolg Spezifisch (Pflanze umgetopft) !!!!!MUSS NOCH GEMACHT WERDEN!!!!!
@@ -44,21 +44,25 @@ public class Script_Erfolge : MonoBehaviour
         {
             StartCoroutine(Trigger01Erf());
         }
+
         erf2Code = PlayerPrefs.GetInt("Erf2");
         if(erf1Count >= erf2Trigger && erf2Code != 12345)
         {
             StartCoroutine(Trigger02Erf());
         }
+
         erf3Code = PlayerPrefs.GetInt("Erf3");
         if (erf1Count >= erf3Trigger && erf3Code != 12345)
         {
             StartCoroutine(Trigger03Erf());
         }
+
         erf4Code = PlayerPrefs.GetInt("Erf4");
         if (erf4Count == erf4Trigger && erf4Code != 12345)
         {
             StartCoroutine(Trigger04Erf());
         }
+
         erf5Code = PlayerPrefs.GetInt("Erf5");
         if (erf5Count == erf5Trigger && erf5Code != 12345)
         {
