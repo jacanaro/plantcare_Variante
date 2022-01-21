@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class RotateRight : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class RotatePlantModel : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public GameObject Plant;
-    private float rotateSpeed = 100f;
+    public Camera camera;
+    private float rotateSpeed = 10f;
     bool rotate = false;
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (rotate == false)
-            return;
-
-        Plant.transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+        if (rotate)
+        {
+            camera.transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+        }
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)

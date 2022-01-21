@@ -38,6 +38,7 @@ public class manageHilfedialog : MonoBehaviour
 
     // ERFOLG GERETTET HIER TRIGGERN
     public void setHappySmileyAndReturnToProfile() {
+        Script_Erfolge.erf4Count++;
         PlayerPrefs.SetString("gesundheit", "gut");
         SceneManager.LoadScene("Pflanzenprofil");
     }
