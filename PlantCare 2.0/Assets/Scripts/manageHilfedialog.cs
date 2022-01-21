@@ -36,6 +36,7 @@ public class manageHilfedialog : MonoBehaviour
         if (Fenster21.active || Fenster22.active || Fenster23.active || Fenster24.active) SceneManager.LoadScene("Hilfedialog");
     }
 
+    // ERFOLG GERETTET HIER TRIGGERN
     public void setHappySmileyAndReturnToProfile() {
         Script_Erfolge.erf4Count++;
         PlayerPrefs.SetString("gesundheit", "gut");
