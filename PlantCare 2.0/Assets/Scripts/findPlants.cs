@@ -15,15 +15,22 @@ public class findPlants : MonoBehaviour {
     public Transform difficultyDropdown;
     
     public RawImage plantImage;
+    public RawImage plantImage2;
     public Texture[] imageTextures = new Texture[3];
     public TextMeshProUGUI  name;
     public TextMeshProUGUI  sonnenbedarf;
     public TextMeshProUGUI  schwierigkeit;
- 
+     public TextMeshProUGUI  name2;
+    public TextMeshProUGUI  sonnenbedarf2;
+    public TextMeshProUGUI  schwierigkeit2;
     public GameObject loading;
     public GameObject match;
+    public GameObject match2;
     public GameObject noMatch;
     public GameObject results;
+    public GameObject btn1;
+    public GameObject btn2;
+
     private int checkMatch;
 
     public void findPlant() {
@@ -83,21 +90,44 @@ public class findPlants : MonoBehaviour {
                 }
 
                 using (IDataReader reader = command.ExecuteReader()) {
+                    int i=0;
                     while (reader.Read()) {
-                        Debug.Log("\nName: " + reader["name"]);
-                        Debug.Log("\nBraucht " + reader["amountOfSunNeeded"] + " Sonne");
-                        Debug.Log("\nSchwierigkeit: " + reader["difficultyLevel"]);
-                        checkMatch++;
-                        //plantImage.texture =
-                        name.text = "" + reader["name"]; 
-                        sonnenbedarf.text = "Braucht " + reader["amountOfSunNeeded"] + " Sonne";
-                        schwierigkeit.text = "Schwierigkeit: " + reader["difficultyLevel"];
-                        
-                        foreach (Texture x in imageTextures)
-                        {
-                            if (x.name.Equals(reader["name"]))
+                        if(i==0){
+                            Debug.Log("\nName: " + reader["name"]);
+                            Debug.Log("\nBraucht " + reader["amountOfSunNeeded"] + " Sonne");
+                            Debug.Log("\nSchwierigkeit: " + reader["difficultyLevel"]);
+                            checkMatch++;
+                            //plantImage.texture =
+                            name.text = "" + reader["name"]; 
+                            sonnenbedarf.text = "Braucht " + reader["amountOfSunNeeded"] + " Sonne";
+                            schwierigkeit.text = "Schwierigkeit: " + reader["difficultyLevel"];
+                            
+                            foreach (Texture x in imageTextures)
                             {
-                                plantImage.texture = x;
+                                if (x.name.Equals(reader["name"]))
+                                {
+                                    plantImage.texture = x;
+                                }
+                            }
+                            i++;
+                        }else{
+                            btn1.SetActive(true);
+                            btn2.SetActive(true);
+                            Debug.Log("\nName: " + reader["name"]);
+                            Debug.Log("\nBraucht " + reader["amountOfSunNeeded"] + " Sonne");
+                            Debug.Log("\nSchwierigkeit: " + reader["difficultyLevel"]);
+                            checkMatch++;
+                            //plantImage.texture =
+                            name2.text = "" + reader["name"]; 
+                            sonnenbedarf2.text = "Braucht " + reader["amountOfSunNeeded"] + " Sonne";
+                            schwierigkeit2.text = "Schwierigkeit: " + reader["difficultyLevel"];
+                            
+                            foreach (Texture x in imageTextures)
+                            {
+                                if (x.name.Equals(reader["name"]))
+                                {
+                                    plantImage2.texture = x;
+                                }
                             }
                         }
                     }
@@ -118,5 +148,15 @@ public class findPlants : MonoBehaviour {
             }
             connection.Close();
         }
+    }
+
+    public void switchToSecondResult(){
+        match.SetActive(false);
+        match2.SetActive(true);
+    }
+    
+    public void switchToFirstResult(){
+        match.SetActive(true);
+        match2.SetActive(false);
     }
 }
