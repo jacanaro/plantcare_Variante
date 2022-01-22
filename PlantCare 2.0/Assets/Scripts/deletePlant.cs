@@ -14,6 +14,8 @@ using UnityEngine.SceneManagement;
 public class deletePlant : MonoBehaviour
 {
     private string dbName = "URI=file:Plants.db";
+    [SerializeField] private GameObject DeleteCheck;
+    [SerializeField] private GameObject DeleteBtn;
 
     public void deletePlantFromDB(){
         using (var connection = new SqliteConnection(dbName)) {
@@ -27,5 +29,15 @@ public class deletePlant : MonoBehaviour
             connection.Close();
         }
         SceneManager.LoadScene("MeinePflanzen");
+    }
+
+    public void turnOnDeleteCheck(){
+        DeleteBtn.SetActive(false);
+        DeleteCheck.SetActive(true);
+    }
+
+    public void dontDeletePlant(){
+        DeleteBtn.SetActive(true);
+        DeleteCheck.SetActive(false);
     }
 }

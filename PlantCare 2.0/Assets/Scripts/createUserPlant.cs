@@ -18,6 +18,7 @@ public class createUserPlant : MonoBehaviour
     public GameObject erfTitel;
     public GameObject erfBeschr;
     private bool erf1drin = false;
+    public GameObject errorText; 
 
     //Erster Erfolg Spezifisch
     public static int erf1Count = 0;
@@ -64,7 +65,12 @@ public class createUserPlant : MonoBehaviour
                     }
                     reader.Close();
                 }
-                
+
+                if (nicknameInputfield.text == "") { 
+                    errorText.SetActive(true); 
+                    return;
+                }
+
                 if (plantExists == true) {
                     //sql command for insertion
                     command.CommandText = "INSERT INTO userPlants (nickname, plantStage, latName, yearOfCreation, monthOfCreation, dayOfCreation) VALUES ('" + nicknameInputfield.text + "', '" + dropdownValue + "', '" + latNameText.text + "', '" + year + "', '" + month + "', '" + day + "' );";
