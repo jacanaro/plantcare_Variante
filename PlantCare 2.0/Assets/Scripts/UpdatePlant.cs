@@ -17,7 +17,6 @@ public class UpdatePlant : MonoBehaviour
     public InputField nicknameInputfield;
     public Transform plantStageDropdown;
     public TMPro.TextMeshProUGUI responseText;
-    [SerializeField] private InputField iField;
 
     public void updatePlantvalues(){
         //get the selected index
@@ -34,7 +33,7 @@ public class UpdatePlant : MonoBehaviour
 
             // set up an object (called "command") to allow db control
             using (var command = connection.CreateCommand()){
-                if(iField.text!=""){
+                if(nicknameInputfield.text!=""){
                 command.CommandText = "UPDATE userPlants SET nickname='" + nicknameInputfield.text + "', plantStage='" + dropdownValue + "' WHERE plantID='" + PlayerPrefs.GetInt("plantID") +"';";            
                 }else{
                 command.CommandText = "UPDATE userPlants SET plantStage='" + dropdownValue + "' WHERE plantID='" + PlayerPrefs.GetInt("plantID") +"';";
