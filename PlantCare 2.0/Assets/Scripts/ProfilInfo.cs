@@ -53,7 +53,12 @@ public class ProfilInfo : MonoBehaviour
                             Debug.Log(e);
                         }
                         title.text = "" + reader["nickname"];
-                        info.text = "" + reader["name"] + "\n" + reader["latName"] + "\n" + reader["difficultyLevel"] + "\n" + "Heute: " + termine;
+                        if(reader["latName"].Equals(reader["name"])){
+                            info.text ="Name: " + "Wüstenblume" + "\n" + "Lat. Name: " +reader["latName"] + "\n" + "Schwierigkeitsgrad: " +reader["difficultyLevel"] + "\n" + "Termine heute: " + termine;
+                        }
+                        else{
+                            info.text = "Name: " + reader["name"] + "\n" + "Lat. Name: " +reader["latName"] + "\n" + "Schwierigkeitsgrad: " +reader["difficultyLevel"] + "\n" + "Termine heute: " + termine;
+                        }
                     }
                     reader.Close();
                 }
