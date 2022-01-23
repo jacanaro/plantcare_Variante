@@ -14,7 +14,7 @@ public class Script_Erfolge : MonoBehaviour
     public GameObject erfBeschr;
 
     //Erster Erfolg Spezifisch (Eine Pflanze)
-    public static int erf1Count = 0;
+    public static int erf1Count = 1;
     public int erf1Trigger = 1;
     public static int erf1Code = 0;
 
@@ -26,14 +26,14 @@ public class Script_Erfolge : MonoBehaviour
     public int erf3Trigger = 10;
     public static int erf3Code = 0;
 
-    //Vierter Erfolg Spezifisch (Pflanze gerettet) !!!!!MUSS NOCH GEMACHT WERDEN!!!!!
-    public static int erf4Count = 0;
+    //Vierter Erfolg Spezifisch (Pflanze gerettet)
+    public static int erf4Count = 2;
     public int erf4Trigger = 1;
     public static int erf4Code = 0;
 
-    //Fuenfter Erfolg Spezifisch (Pflanze umgetopft) !!!!!MUSS NOCH GEMACHT WERDEN!!!!!
+    //Fuenfter Erfolg Spezifisch (Pflanze umgetopft)
     public static int erf5Count = 0;
-    public int erf5Trigger = 2;
+    public int erf5Trigger = 1;
     public static int erf5Code = 0;
 
     // Update is called once per frame
@@ -136,7 +136,7 @@ public class Script_Erfolge : MonoBehaviour
     //ERFOLG 04
     IEnumerator Trigger04Erf()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         erfActive = true;
         erfNotif.SetActive(true);
         erf4Code = 12345;
@@ -157,7 +157,7 @@ public class Script_Erfolge : MonoBehaviour
     //ERFOLG 05
     IEnumerator Trigger05Erf()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         erfActive = true;
         erfNotif.SetActive(true);
         erf5Code = 12345;
