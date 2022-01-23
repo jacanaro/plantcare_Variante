@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
+using Mono.Data.Sqlite;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 public class manageHilfedialog : MonoBehaviour
 {
@@ -10,23 +14,23 @@ public class manageHilfedialog : MonoBehaviour
     public GameObject Fenster22;
     public GameObject Fenster23;
     public GameObject Fenster24;
-
-    public void schwarzePunkte() {
+    
+    public void option1() {
         Fenster1.SetActive(false);
         Fenster21.SetActive(true);
     }
 
-    public void weiseFlecken() {
+    public void option2() {
         Fenster1.SetActive(false);
         Fenster22.SetActive(true);
     }
 
-    public void verwelkt() {
+    public void option3() {
         Fenster1.SetActive(false);
         Fenster23.SetActive(true);
     }
 
-    public void blattLaeuse() {
+    public void option4() {
         Fenster1.SetActive(false);
         Fenster24.SetActive(true);
     }
@@ -36,7 +40,6 @@ public class manageHilfedialog : MonoBehaviour
         if (Fenster21.active || Fenster22.active || Fenster23.active || Fenster24.active) SceneManager.LoadScene("Hilfedialog");
     }
 
-    // ERFOLG GERETTET HIER TRIGGERN
     public void setHappySmileyAndReturnToProfile() {
         Script_Erfolge.erf4Count++;
         PlayerPrefs.SetString("gesundheit", "gut");

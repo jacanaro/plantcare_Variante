@@ -908,7 +908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31.010376, y: -192}
+  m_AnchoredPosition: {x: -31.010376, y: -248}
   m_SizeDelta: {x: 267.37, y: 56.2755}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171945009
@@ -2012,6 +2012,7 @@ GameObject:
   - component: {fileID: 392798140}
   - component: {fileID: 392798139}
   - component: {fileID: 392798138}
+  - component: {fileID: 392798141}
   m_Layer: 5
   m_Name: Option1
   m_TagString: Untagged
@@ -2083,9 +2084,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 24666432}
+      - m_Target: {fileID: 392798141}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: schwarzePunkte
+        m_MethodName: option1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2133,6 +2134,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392798136}
   m_CullTransparentMesh: 1
+--- !u!114 &392798141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392798136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7998f05be3719f74a8a4c1c558ffafad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fenster1: {fileID: 24666428}
+  Fenster21: {fileID: 216621270}
+  Fenster22: {fileID: 2111349614}
+  Fenster23: {fileID: 974735557}
+  Fenster24: {fileID: 1505470946}
 --- !u!1 &409749789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2780,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1394532586}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: blattLaeuse
+        m_MethodName: option4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3779,7 +3797,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 24666432}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
         m_MethodName: manageBackButton
         m_Mode: 1
@@ -4052,7 +4070,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 239889938}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: verwelkt
+        m_MethodName: option3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4246,11 +4264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7998f05be3719f74a8a4c1c558ffafad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fenster1: {fileID: 0}
-  Fenster21: {fileID: 0}
-  Fenster22: {fileID: 0}
-  Fenster23: {fileID: 0}
-  Fenster24: {fileID: 0}
+  Fenster1: {fileID: 24666428}
+  Fenster21: {fileID: 216621270}
+  Fenster22: {fileID: 2111349614}
+  Fenster23: {fileID: 974735557}
+  Fenster24: {fileID: 1505470946}
 --- !u!1 &703340370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4263,6 +4281,7 @@ GameObject:
   - component: {fileID: 703340374}
   - component: {fileID: 703340373}
   - component: {fileID: 703340372}
+  - component: {fileID: 703340375}
   m_Layer: 5
   m_Name: Option3
   m_TagString: Untagged
@@ -4334,9 +4353,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 24666432}
+      - m_Target: {fileID: 703340375}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: verwelkt
+        m_MethodName: option3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4384,6 +4403,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703340370}
   m_CullTransparentMesh: 1
+--- !u!114 &703340375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703340370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7998f05be3719f74a8a4c1c558ffafad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fenster1: {fileID: 0}
+  Fenster21: {fileID: 0}
+  Fenster22: {fileID: 0}
+  Fenster23: {fileID: 0}
+  Fenster24: {fileID: 0}
 --- !u!1 &729706004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5378,7 +5414,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 239889938}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: weiseFlecken
+        m_MethodName: option2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5578,6 +5614,7 @@ GameObject:
   - component: {fileID: 932511705}
   - component: {fileID: 932511704}
   - component: {fileID: 932511703}
+  - component: {fileID: 932511706}
   m_Layer: 5
   m_Name: Option2
   m_TagString: Untagged
@@ -5649,9 +5686,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 24666432}
+      - m_Target: {fileID: 932511706}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: weiseFlecken
+        m_MethodName: option2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5699,6 +5736,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932511701}
   m_CullTransparentMesh: 1
+--- !u!114 &932511706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932511701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7998f05be3719f74a8a4c1c558ffafad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fenster1: {fileID: 24666428}
+  Fenster21: {fileID: 216621270}
+  Fenster22: {fileID: 2111349614}
+  Fenster23: {fileID: 974735557}
+  Fenster24: {fileID: 1505470946}
 --- !u!1 &974735557
 GameObject:
   m_ObjectHideFlags: 0
@@ -6153,7 +6207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1394532586}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: schwarzePunkte
+        m_MethodName: option1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6672,7 +6726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1394532586}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: weiseFlecken
+        m_MethodName: option2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8086,7 +8140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1353158403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8167,7 +8221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1394532585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8608,7 +8662,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1394532586}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: verwelkt
+        m_MethodName: option3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8952,7 +9006,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 239889938}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: blattLaeuse
+        m_MethodName: option4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9246,6 +9300,7 @@ GameObject:
   - component: {fileID: 1586963044}
   - component: {fileID: 1586963046}
   - component: {fileID: 1586963045}
+  - component: {fileID: 1586963047}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -9316,6 +9371,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586963043}
   m_CullTransparentMesh: 1
+--- !u!114 &1586963047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586963043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3974f2fd61173dd4cb343c17cecd67cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HilfedialogTomate: {fileID: 1353158402}
+  HilfedialogPaprika: {fileID: 1098083450}
+  HilfedialogAloeVera: {fileID: 1095798039}
 --- !u!1 &1612466336
 GameObject:
   m_ObjectHideFlags: 0
@@ -9412,7 +9482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1623579808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10526,19 +10596,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Blattl\xE4use sitzen meist an den St\xE4ngeln oder Blattunterseiten der
-    Paprika. Sie saugen den Pflanzensaft aus den Blattadern und schw\xE4chen so die
-    Pflanze. Bei Jungpflanzen k\xF6nnen Blattl\xE4use auftreten, wenn die Temperatur
-    f\xFCr sie zu niedrig ist. Achte darauf, dass deine Paprika gen\xFCgend Licht
-    bekommt und nicht \xFCberd\xFCngt ist! Wenn es trocken ist, reicht es, die Blattl\xE4use
-    mit einem scharfen Wasserstrahl abzuspritzen oder mit dem Finger zu entfernen.
-    Wenn der Befall st\xE4rker wird, kannst du die Pflanze mit einem Gemisch aus
-    Wasser mit ein wenig parf\xFCmfreier Kaliseife anspr\xFChen. Wenn du das Gef\xFChl
-    hast, du hast zu viel ged\xFCngt, lege eine kleine D\xFCngepause ein. \r\nGrauer
-    Belag: Oh oh, Grauschimmel! Deiner Paprika ist es zu feucht. Achte auf gute Luft
-    f\xFCr deine Pflanze! Entferne alle infizierten Teile der Pflanze und entsorge
-    sie im Hausm\xFCll, ehe sich der Pilzbefall auf andere Pflanzen ausbreitet. Desinfiziere
-    auch deine Werkzeuge, um erneute Infektion zu vermeiden. Im Pflanzengesch\xE4ft
-    kannst du spezielle Sprays zur Behandlung kaufen.\r\n"
+    Paprika. Achte darauf, dass deine Paprika gen\xFCgend Licht bekommt und nicht
+    \xFCberd\xFCngt ist! Wenn es trocken ist, reicht es, die Blattl\xE4use mit einem
+    scharfen Wasserstrahl abzuspritzen oder mit dem Finger zu entfernen. Wenn der
+    Befall st\xE4rker wird, kannst du die Pflanze mit einem Gemisch aus Wasser mit
+    ein wenig parf\xFCmfreier Kaliseife anspr\xFChen. Wenn du das Gef\xFChl hast,
+    du hast zu viel ged\xFCngt, lege eine kleine D\xFCngepause ein. \r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10704,6 +10767,7 @@ GameObject:
   - component: {fileID: 1874496814}
   - component: {fileID: 1874496813}
   - component: {fileID: 1874496812}
+  - component: {fileID: 1874496815}
   m_Layer: 5
   m_Name: Option4
   m_TagString: Untagged
@@ -10775,9 +10839,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 24666432}
+      - m_Target: {fileID: 1874496815}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: blattLaeuse
+        m_MethodName: option4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10825,6 +10889,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874496810}
   m_CullTransparentMesh: 1
+--- !u!114 &1874496815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874496810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7998f05be3719f74a8a4c1c558ffafad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fenster1: {fileID: 0}
+  Fenster21: {fileID: 0}
+  Fenster22: {fileID: 0}
+  Fenster23: {fileID: 0}
+  Fenster24: {fileID: 0}
 --- !u!1 &1878994236
 GameObject:
   m_ObjectHideFlags: 0
@@ -11099,7 +11180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: -238}
+  m_AnchoredPosition: {x: -42, y: -258}
   m_SizeDelta: {x: 267.37, y: 56.2755}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947352487
@@ -11722,7 +11803,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 239889938}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: schwarzePunkte
+        m_MethodName: option1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
