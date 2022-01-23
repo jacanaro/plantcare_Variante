@@ -449,7 +449,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 50739768}
         m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: setHappySmileyAndReturnToProfile
+        m_MethodName: umtopfenErfolg
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3726,6 +3726,7 @@ GameObject:
   - component: {fileID: 635165162}
   - component: {fileID: 635165161}
   - component: {fileID: 635165160}
+  - component: {fileID: 635165159}
   m_Layer: 5
   m_Name: BtnBack
   m_TagString: Untagged
@@ -3753,6 +3754,18 @@ RectTransform:
   m_AnchoredPosition: {x: -155, y: -265}
   m_SizeDelta: {x: 46.9323, y: 36.5424}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &635165159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635165157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f624573e6a0bda845b1f1815b37b5bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &635165160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3797,9 +3810,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: manageHilfedialog, Assembly-CSharp
-        m_MethodName: manageBackButton
+      - m_Target: {fileID: 635165159}
+        m_TargetAssemblyTypeName: Script_SceneManager, Assembly-CSharp
+        m_MethodName: pflanzenProfil
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
